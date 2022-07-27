@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.demo.mapper.SamplePrjMapper">
+	<select id="selectUsrNm" resultType="String">
+		SELECT usr_nm FROM t_spring_origin
+	</select>
+	<select id="selectUsrCmt" resultType="String">
+		SELECT usr_cmt FROM t_spring_origin
+	</select>
+
+
+</mapper>

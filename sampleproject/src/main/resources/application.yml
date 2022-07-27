@@ -1,0 +1,26 @@
+server:
+  port: 9090
+  
+spring:
+  main: 
+    allow-bean-definition-overriding: true
+  thymeleaf:
+    cache: false
+    check-template-location: true
+    view-names:
+    - thymeleaf/*
+    prefix: classpath:templates/
+    suffix: .html
+  datasource:
+#    url: jdbc:log4jdbc:mariadb://localhost:3306/dbTest?serverTimezone=UTC&characterEncoding=UTF-8&allowMultiqueries=true
+    url : jdbc:mariadb://localhost:3306/dbTest
+#    driver-class-name: net.sf.log4jdbc.sql.jdbcapi.DriverSpy
+    driver-class-name: org.mariadb.jdbc.Driver
+    username: root
+    password: groot
+mybatis:
+  mapper-locations:
+  - mybatis/**/*.xml
+  type-aliases-package: com.example.demo.vo
+  configuration:
+    map-underscore-to-camel-case: true
