@@ -4,6 +4,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -14,6 +16,8 @@ import com.example.demo.service.SamplePrjService;
 
 @Controller
 public class SamplePrjController {
+
+	private final Logger log = LoggerFactory.getLogger(this.getClass());
 
 	@Autowired
 	SamplePrjService service;
@@ -28,13 +32,12 @@ public class SamplePrjController {
 		String cmt = "Thymeleaf Hello";
 		String usrNm = service.selectUsrNm();
 		String usrCmt = service.selectUsrCmt();
-//		String usrNm = "DB TEST";
 
 		map.put("welcome", cmt);
 		map.put("usrNm", usrNm);
 		map.put("usrCmt", usrCmt);
 
-		System.out.println("Select 1 : " + usrNm + "\nSelect 2 : " + usrCmt);
+		log.info("\nSelect 1 : " + usrNm + "\nSelect 2 : " + usrCmt);
 
 		model.addAttribute("hello", map);
 		return "thymeleaf/goodThymeLeaf";

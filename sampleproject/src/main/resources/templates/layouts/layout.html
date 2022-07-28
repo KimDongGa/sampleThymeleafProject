@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko"
+	  xmlns:th="http://www.thymeleaf.org"
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+<head>
+	<meta charset="UTF-8">
+	<title>ThymeLeaf Layout Area</title>
+</head>
+
+<!-- Common Header -->
+<th:block th:replace="/layouts/fragments/header :: headerFragment"></th:block>
+<body id="page-top" class="dashboard dashboard_1">
+	<div class="full_container">
+		<div class="inner_container">
+			<!-- Side Bar -->
+			<th:block th:replace="/layouts/fragments/sidebar :: sidebarFragment">
+			</th:block>
+
+			<!-- Right Contents -->
+			<div id="content">
+				<th:block th:replace="/layouts/fragments/top :: topbarFragment"></th:block>
+				<!-- DashBoard Inner -->
+				<div class="middle_cont">
+					<div class="container-fluid">
+						<th:block layout:fragment="content"></th:block>
+					</div>
+				</div>
+
+				<!-- Common Bottom -->
+				<th:block th:replace="/layouts/fragments/footer :: footerFragment"></th:block>
+			</div>
+			<!-- DashBoard Inner -->
+		</div>
+	</div>
+	<!-- Common Script -->
+	<th:block th:replace="/layouts/fragments/script :: scriptFragment"></th:block>
+</body>
+</html>
