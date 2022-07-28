@@ -18,5 +18,4 @@ public class SamplePrjVO {
 		this.usr_nm = usr_nm;
 		this.usr_cmt = usr_cmt;
 	}
-
 }

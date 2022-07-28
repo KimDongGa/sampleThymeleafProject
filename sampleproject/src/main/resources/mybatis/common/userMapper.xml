@@ -9,5 +9,4 @@
 		SELECT usr_cmt FROM t_spring_origin
 	</select>
 
-
 </mapper>

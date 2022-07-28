@@ -33,6 +33,7 @@ public class SamplePrjController {
 		String usrNm = service.selectUsrNm();
 		String usrCmt = service.selectUsrCmt();
 
+
 		map.put("welcome", cmt);
 		map.put("usrNm", usrNm);
 		map.put("usrCmt", usrCmt);

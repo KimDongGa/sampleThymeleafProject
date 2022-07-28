@@ -23,5 +23,4 @@ public class SamplePrjServiceImpl implements SamplePrjService{
 	public String selectUsrCmt() throws Exception {
 		return mapper.selectUsrCmt();
 	}
-
 }
