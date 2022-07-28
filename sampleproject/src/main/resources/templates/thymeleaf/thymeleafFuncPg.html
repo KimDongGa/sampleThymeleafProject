@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:th="http://www.thymeleaf.org"
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	  >
+
+	<head>
+		<meta charset=UTF-8>
+		<title>타임리프 샘플 페이지 겸 메인 페이지</title>
+
+		<!-- CSS 파일 추가 부분 -->
+		<!--
+		<link th:href="@{/css/main.css}" rel="stylesheet" />
+		-->
+
+
+		 <!-- JS 파일 추가 부분 -->
+		 <!--
+		 <script type="text/javascript" th:src="@{/js/element.js}"></script>
+		 -->
+		 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"/>
+	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	</head>
+
+	<body>
+		<h1> Hello! ThymeLeaf FunctionTest </h1><br/><br/>
+		<h2> Thymeleaf Template Function </h2>
+		<div layout:fragment="content">
+			<h3> data Insert || Update || Delete Test </h3>
+				
+	
+
+			<h3> Function Develop </h3>
+
+
+			<h3> External Function Call </h3>
+
+
+		</div>
+	</body>
+</html>

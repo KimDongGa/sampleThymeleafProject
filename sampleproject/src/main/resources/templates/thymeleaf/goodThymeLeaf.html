@@ -18,6 +18,9 @@
 		 <!--
 		 <script type="text/javascript" th:src="@{/js/element.js}"></script>
 		 -->
+		 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"/>
+	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	</head>
 
 	<body>
@@ -52,13 +55,17 @@
 			<!--
 			<div th:insert="~{common/footer :: samplefooter}"></div>
 			 -->
-
-			<h5> data Rendering Test</h5>
-			<span th:text="${hello.welcome}"></span> <br/><br/>
+			<br/>
+			<h5> data Select Rendering Test</h5>
+			<span th:text="${hello.welcome}"></span> <br/>
 			<h6>
 				<span th:text="${hello.usrNm}"></span><br/>
 				<span th:text="${hello.usrCmt}"></span>
 			</h6>
+			<br/>
+
+			<a th:href="@{/home/funcTest}">기능테스트</a>
+
 		</div>
 	</body>
 </html>

@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.example.demo.mapper.SamplePrjMapper;
 import com.example.demo.service.SamplePrjService;
+import com.example.demo.vo.SamplePrjVO;
 
 @Controller
 public class SamplePrjController {
@@ -42,5 +43,10 @@ public class SamplePrjController {
 
 		model.addAttribute("hello", map);
 		return "thymeleaf/goodThymeLeaf";
+	}
+
+	@RequestMapping(value = "/home/funcTest")
+	public String testFunc(){
+		return "thymeleaf/thymeleafFuncPg";
 	}
 }
