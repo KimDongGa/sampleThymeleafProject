@@ -18,9 +18,13 @@ spring:
     driver-class-name: org.mariadb.jdbc.Driver
     username: root
     password: groot
+    
 mybatis:
   mapper-locations:
   - mybatis/**/*.xml
   type-aliases-package: com.example.demo.vo
   configuration:
     map-underscore-to-camel-case: true
+
+ 
+  

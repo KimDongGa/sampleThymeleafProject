@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
 	  xmlns:th="http://www.thymeleaf.org"
 	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-	  >
+	  layout:decorate="~{/layouts/layout}">
 
 	<head>
 		<meta charset=UTF-8>
@@ -18,8 +18,8 @@
 		 <!--
 		 <script type="text/javascript" th:src="@{/js/element.js}"></script>
 		 -->
-		 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"/>
-	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"/>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	</head>
 
@@ -28,8 +28,65 @@
 		<h2> Thymeleaf Template Function </h2>
 		<div layout:fragment="content">
 			<h3> data Insert || Update || Delete Test </h3>
-				
-	
+				<div class="container-fluid">
+					<h4>Ajax Call [Select]</h4>
+					<div id="feedback"></div>
+					<form class="form-horizontal" id="search-form">
+						<div class="form-group form-group-lg">
+							<label class="col-sm-2 control-label">UsrNm</label>
+							<div class="col-sm-2">
+								<input type="text" class="form-control" id="usrNm">
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="col-sm-offset-2 col-sm-10">
+								<button type="submit" id="btn-search" class="btn btn-primary btn-lg">검색</button>
+							</div>
+						</div>
+					</form>
+				</div>
+				<script type="text/javascript">
+					$(document).ready(function(){
+						$("#search-form").submit(function(event){
+							event.preventDefault();
+							fire_ajax_submit();
+						});
+					});
+
+					function fire_ajax_submit(){
+						var search = {};
+						search["usrNm"] = $("#usrNm").val();
+
+						$("#btn-search").prop("disabled",true);
+
+						$.ajax({
+							type:"POST",
+							contentType : "application/json",
+							data : JSON.stringify(search),
+							dataType : 'json',
+							cache : false,
+							timeout : 600000,
+							success : function(data){
+								var json = "<h4>Ajax Response</h4><pre>"
+										  + JSON.stringify(data, null, 4) + "</pre>";
+								$('#feedback').html(prop);
+
+								console.log("SUCCESS : ", data);
+								$("#btn-search").prop("disabled", false);
+							},
+							error : function(e){
+								var json = "<h4>Ajax Response</h4><pre>"
+											+ e.responseText + "</pre>";
+								$("#feedback").html(json);
+
+								console.log("ERROR : ", e);
+								$("#btn-search").prop("disabled", false);
+							}
+
+						})
+
+					}
+				</script>
 
 			<h3> Function Develop </h3>
 
