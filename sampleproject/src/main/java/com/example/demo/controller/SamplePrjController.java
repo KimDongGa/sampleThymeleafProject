@@ -52,7 +52,10 @@ public class SamplePrjController {
 		return "thymeleaf/thymeleafFuncPg";
 	}
 
-//	@RequestMapping(value = "/home/funcTestSearch")
+//	@RequestMapping(value = "/home/funcTestSearch", method = Req)
+//	public String dataSend(Model model, ) {
 //
+//	}
+
 
 }
